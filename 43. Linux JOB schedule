@@ -1,0 +1,17 @@
+Through at command
+# rpm -qa | grep -i at
+#systemctl status atd
+If not started then start it
+#systemctl start atd
+# at 12:50
+     at> touch abc
+     at>  touch india
+Ctrl+d to save
+
+# at 12:00 PM October 18 2020
+     at> yum update * -y
+
+Ctrl+d
+
+#atq (to check job scheduling)
+#atrm 16 (cancel job 16=job number)
