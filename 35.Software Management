@@ -1,0 +1,5 @@
+# rpm -qa (installed software list)
+# rpm -qa | wc -l (to show no. of packages)
+rpm -ev firefoxtab ( remove package)
+rpm -ivh firefoxtab (to install)
+rpm -ivh targetclitab --no deps (install without dependencies)
