@@ -2,4 +2,28 @@ connect the RHEL dvd first#
 #mkdir -p /software/itrpm
 #df -h (list of file systems)
 we can see /dev/sro   /run/media/root/RHEL...
-cd 
+#cd /run/media/root/RHEL....
+#cd packages/
+#cd -rvf * /software/itrpm
+#cd /software
+#cd /itrpm
+#ls (everything copied)
+#cd (get to home directory)
+#createrepo -v /software (as repodata & itrpm should be at same place)
+#cd /software ( u'll see both itrpm & repodata)
+#cd /etc/yum.repos.d/
+#ll
+#vim itrpm.repo
+    [itrpm]
+    name = itrpm
+    baseurl = file:///software
+    enabled = 1
+    gpgcheck = 0
+  :wq!
+#yum clean all
+#yum repolist
+If you add or delete from itrpm packages
+#createrepo --update /software
+
+Single command
+#yum-config-manager --add-repo=file:///examplerpm
