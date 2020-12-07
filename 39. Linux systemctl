@@ -1,0 +1,25 @@
+#systemctl status sshd (syntax=systemctl+action+daemon)
+#systemctl stop sshd (to stop daemon)
+#if u reboot it will come back active again
+#systemctl disable sshd (to permanently stop)
+#systemctl start sshd (temporary start)
+#systemctl enable sshd (permanent start)
+Suppose u edit configuration files in vim /etc/ssh/sshd_config
+To make changes in effect you have to reload 
+#systemctl reload sshd
+
+Adjusting the system state...4 types of target
+graphical.target, multi-user.target, rescue.target, emergency.target
+
+#systemctl get-default (u will see graphical.target)
+#systemctl isolate multi-user.target (u will get into command line interface)
+#systemctl set-default multi-user.target (to set permanently)
+#systemctl get-default (u will see multiuser.target)
+#systemctl isolate multi-user.target
+To go in graphical
+#systemctl isolate graphical.target
+#systemctl set-default graphical.target(to set permanently)
+#systemctl get-default (check, it will be graphical.target now)
+
+
+#systemctl isolate rescue.target (rescue mode.. for troubleshooting)
