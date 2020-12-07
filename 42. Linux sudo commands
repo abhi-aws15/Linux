@@ -1,0 +1,27 @@
+Giving sudo permission to normal users
+#which fdisk -l (to check binary of root commands)
+/sbin/fdisk
+
+#vim /etc/sudoers
+   se nu (give line numbers)
+   At number 100 enter user details, press o to get a blank line
+   Harry     ALL=(ALL)    ALL
+:wq!
+
+For giving permission to selected commands
+   Harry      ALL=(ALL)   /sbin/fdisk,/sbin/useradd,/sbin/reboot
+:wq!
+   
+For giving full permission except selected ones
+  Harry.      ALL=(ALL)    ALL,!/sbin/reboot,!/sbin/poweroff
+
+Giving permission to group
+#groupadd dev
+#gpasswd -M Harry,Natasha,Sarah dev
+#grep dev /etc/group
+#vim /etc/sudoers
+   %wheel  ALL=(ALL)    ALL
+   %dev     ALL=(ALL)     ALL
+
+Point:- so that no passwd asks when user do sudo
+Natasha     ALL=(ALL)   NOPASSWD:ALL
